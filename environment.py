@@ -9,12 +9,23 @@ class Lawn:
     def progress(self):
         # sum the number of 0s in the lawn
         return sum([sum([1 for i in range(len(self.lawn[j])) if self.lawn[j][i] == 0]) for j in range(len(self.lawn))])
+    
+    def lanw_cuted(self):
+        return self.progress() == self.get_lawn_size()
 
 class Mower:
     def __init__(self, lawn):
         self.location = (0, 0)
         self.steps = 0
         self.lawn = lawn
+    
+    @property
+    def x(self):
+        return self.location[0]
+    
+    @property
+    def y(self):
+        return self.location[1]
     
     def update_location(self, location):
         # if current location not is charger location and is value 1 (grass) update to 0 (cut grass)

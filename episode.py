@@ -23,7 +23,7 @@ def run_episode(agent, lawn_size, draw=False, delay=0.01):
             done = True
             reward = -1000
 
-        if lawn.progress() == lawn.get_lawn_size()-1:
+        if lawn.lanw_cuted():
             done = True
             reward = 1000
         
